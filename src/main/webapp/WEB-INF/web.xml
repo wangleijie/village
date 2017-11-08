@@ -7,16 +7,20 @@
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:SSM-mybatis.xml</param-value>
+    <param-value>classpath:SSM-servlet.xml</param-value>
   </context-param>
+
+
+
 
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
 
+
   <servlet>
-    <servlet-name>SSMServlet</servlet-name>
+    <servlet-name>ShiroServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 
     <init-param>
@@ -26,8 +30,9 @@
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>SSMServlet</servlet-name>
+    <servlet-name>ShiroServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
 
 </web-app>
