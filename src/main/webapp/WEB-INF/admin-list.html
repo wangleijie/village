@@ -58,7 +58,7 @@
             <th>角色</th>
             <th width="130">加入时间</th>
             <th width="100">是否已启用</th>
-            <th width="100" colspan="3">操作</th>
+            <th width="90" colspan="3">操作</th>
         </tr>
         </thead>
         <tbody id="dataList">
@@ -142,14 +142,14 @@
     }
 
     function addNewTr(msg) {
-        var checkbox=$("<td></td>").html("<input type='checkbox'>")
-        var userId=$("<td></td>").html("<p>"+msg.id+"</p>")
-        var username = $("<td></td>").html("<p>" + msg.username + "</p>")
-        var tel=$("<td></td>").html("<p>"+msg.tel+"</p>")
-        var email=$("<td></td>").html("<p>"+msg.email+"</p>")
-        var roleName=$("<td></td>").html("<p>"+"null"+"</p>")
-        var createTime=$("<td></td>").html("<p>"+msg.createTime+"</p>")
-        var state=$("<td></td>").html("<p>"+msg.state+"</p>")
+        var checkbox=$("<td></td>").html("<input type='checkbox'>");
+        var userId=$("<td></td>").html("<p>"+msg.id+"</p>");
+        var username = $("<td></td>").html("<p>" + msg.username + "</p>");
+        var tel=$("<td></td>").html("<p>"+msg.tel+"</p>");
+        var email=$("<td></td>").html("<p>"+msg.email+"</p>");
+        var roleName=$("<td></td>").html("<p>"+"null"+"</p>");
+        var createTime=$("<td></td>").html("<p>"+msg.createTime+"</p>");
+        var state=$("<td></td>").html("<p>"+msg.state+"</p>");
         var imp=$("<td></td>").html("<a  style='text-decoration:none' title='修改'><i class='Hui-iconfont'>&#xe631;</i></a>")
         var imp1=$("<td></td>").html("<a title='编辑' class='ml-5' style='text-decoration:none'><i class='Hui-iconfont'>&#xe6df;</i></a>")
         var imp2=$("<td></td>").html("<a title='删除' class='ml-5' style='text-decoration:none'><i class='Hui-iconfont'>&#xe6e2;</i></a>")
@@ -171,14 +171,12 @@
             success: function (result) {
 
                 var dataList = result.data;
-                alert(result.data)
-
-                console.log(dataList)
+                console.log(dataList);
 
                 $.each(dataList, function (i, domEle) {
                     console.log(domEle);
                     addNewTr(domEle)
-                })
+                });
 //                page(result)
             }
         })

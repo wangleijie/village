@@ -10,7 +10,9 @@ import com.lanou.utils.VerifyCode;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -103,6 +105,7 @@ public class MainController {
     }
 
 
+    // 显示全部
     @RequestMapping(value = "/admin_list")
     public String adminlist(){
         return "admin-list";
@@ -112,7 +115,7 @@ public class MainController {
     @RequestMapping(value = "/getAdminlist")
     public AjaxResult adlist(){
         List<User> userList = sysUserService.findalladmin();
-        System.out.println(userList);
+//        System.out.println(userList);
         return new AjaxResult(userList);
 
 }

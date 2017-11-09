@@ -4,6 +4,7 @@ import com.lanou.bean.User;
 import com.lanou.service.SysUserService;
 import com.lanou.service.impl.SysUserServiceImpl;
 import com.lanou.utils.VerifyCode;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -91,5 +92,12 @@ public class MyRealm extends AuthorizingRealm{
         // user 到了授权方法里面
         return new SimpleAuthenticationInfo(user,password,getName());
 
+    }
+
+
+    // 清除缓存
+    public void clearCached() {
+        PrincipalCollection principals = SecurityUtils.getSubject().getPrincipals();
+        super.clearCache(principals);
     }
 }
