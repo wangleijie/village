@@ -51,29 +51,29 @@
 				<th width="100">操作</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr class="text-c">
-				<td><input type="checkbox" value="1" name=""></td>
-				<td>1</td>
-				<td>admin</td>
-				<td>13000000000</td>
-				<td>admin@mail.com</td>
-				<td>超级管理员</td>
-				<td>2014-6-11 11:11:42</td>
-				<td class="td-status"><span class="label label-success radius">已启用</span></td>
-				<td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-			</tr>
-			<tr class="text-c">
-				<td><input type="checkbox" value="2" name=""></td>
-				<td>2</td>
-				<td>zhangsan</td>
-				<td>13000000000</td>
-				<td>admin@mail.com</td>
-				<td>栏目编辑</td>
-				<td>2014-6-11 11:11:42</td>
-				<td class="td-status"><span class="label radius">已停用</span></td>
-				<td class="td-manage"><a style="text-decoration:none" onClick="admin_start(this,'10001')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe615;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','2','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-			</tr>
+		<tbody id="tbody">
+			<!--<tr class="text-c">-->
+				<!--<td><input type="checkbox" value="1" name=""></td>-->
+				<!--<td>1</td>-->
+				<!--<td>admin</td>-->
+				<!--<td>13000000000</td>-->
+				<!--<td>admin@mail.com</td>-->
+				<!--<td>超级管理员</td>-->
+				<!--<td>2014-6-11 11:11:42</td>-->
+				<!--<td class="td-status"><span class="label label-success radius">已启用</span></td>-->
+				<!--<td class="td-manage"><a style="text-decoration:none" onClick="admin_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','1','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>-->
+			<!--</tr>-->
+			<!--<tr class="text-c">-->
+				<!--<td><input type="checkbox" value="2" name=""></td>-->
+				<!--<td>2</td>-->
+				<!--<td>zhangsan</td>-->
+				<!--<td>13000000000</td>-->
+				<!--<td>admin@mail.com</td>-->
+				<!--<td>栏目编辑</td>-->
+				<!--<td>2014-6-11 11:11:42</td>-->
+				<!--<td class="td-status"><span class="label radius">已停用</span></td>-->
+				<!--<td class="td-manage"><a style="text-decoration:none" onClick="admin_start(this,'10001')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe615;</i></a> <a title="编辑" href="javascript:;" onclick="admin_edit('管理员编辑','admin-add.html','2','800','500')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>-->
+			<!--</tr>-->
 		</tbody>
 	</table>
 </div>
@@ -88,6 +88,40 @@
 <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
+
+	function addNewTr(admin) {
+		// 复选按钮
+		var td1 = $("<td><input type='checkbox'></td>");
+		// id
+		var td2 = $("<td>" + admin.id + "</td>");
+		// 登录名
+		var td3 = $("<td>" + admin.username + "</td>");
+		// 手机
+//		var td4 =
+
+	}
+
+
+
+
+
+
+
+function aaa() {
+
+	$.ajax({
+		url:"/getAdminlist",
+		success:function (result) {
+			console.log(result.data);
+		}
+	})
+}
+
+aaa();
+
+
+
+
 /*
 	参数解释：
 	title	标题
