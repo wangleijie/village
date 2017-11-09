@@ -1,26 +1,37 @@
 package com.lanou.controller;
 
 
+import com.lanou.bean.SysRole;
+import com.lanou.service.SysRoleService;
+import com.lanou.service.impl.SysRoleServiceImpl;
+import com.lanou.utils.AjaxResult;
 import com.lanou.utils.VerifyCode;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 
 /**
  * Created by dllo on 17/11/7.
  */
 @Controller
 public class MainController {
+
+@Resource
+    private SysRoleService sysRoleService;
+
 
     @RequestMapping(value = "/")
     public String font(){
@@ -37,6 +48,13 @@ public class MainController {
     public String b(){
         return "welcome";
     }
+
+//    跳转到用户角色列表
+    @RequestMapping(value = "/roles")
+    public String roles(){
+        return "admin-role";
+    }
+
 
 
     @ResponseBody
@@ -57,5 +75,17 @@ public class MainController {
 
     }
 
+
+
+
+//    获得全部角色
+    @ResponseBody
+    @RequestMapping(value = "/getRolesAll")
+    public AjaxResult getRolesAll(){
+
+        List<SysRole> sysRoles = sysRoleService.getRolesAll();
+        System.out.println(sysRoles);
+        return new AjaxResult(sysRoles);
+    }
 
 }
