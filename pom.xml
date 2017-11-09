@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-
+    <spring-data.version>1.11.0.RELEASE</spring-data.version>
     <spring.version>4.3.6.RELEASE</spring.version>
   </properties>
 
@@ -151,16 +151,16 @@
 
 
     <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-all -->
-    <dependency>
-      <groupId>org.apache.shiro</groupId>
-      <artifactId>shiro-all</artifactId>
-      <version>1.2.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>6.12</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.apache.shiro</groupId>-->
+      <!--<artifactId>shiro-all</artifactId>-->
+      <!--<version>1.2.3</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.testng</groupId>-->
+      <!--<artifactId>testng</artifactId>-->
+      <!--<version>6.12</version>-->
+    <!--</dependency>-->
 
 
     <dependency>
