@@ -22,16 +22,6 @@ public class SysRole {
 
     private String remark;
 
-    List<SysUser>sysUsers;
-
-
-    public List<SysUser> getSysUsers() {
-        return sysUsers;
-    }
-
-    public void setSysUsers(List<SysUser> sysUsers) {
-        this.sysUsers = sysUsers;
-    }
 
     public Integer getId() {
         return id;
@@ -106,7 +96,6 @@ public class SysRole {
     }
 
 
-
     @Override
     public String toString() {
         return "SysRole{" +
@@ -119,7 +108,6 @@ public class SysRole {
                 ", updateTime=" + updateTime +
                 ", updateId=" + updateId +
                 ", remark='" + remark + '\'' +
-                ", sysUsers=" + sysUsers +
                 '}';
     }
 }
